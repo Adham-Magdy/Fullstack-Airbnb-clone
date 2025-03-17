@@ -1,9 +1,11 @@
 'use client';
 import React, { useState } from "react";
 import MenuLink from "./MenuLink";
+import useLoginModal from "@/app/hooks/useLoginModal";
 
 const UserNav = () => {
   const [isOpen,setIsOpen]=useState(false);
+  const loginModal =  useLoginModal();
   return (
     <div className="p-2 rounded-full border relative inline-block">
       <button
@@ -43,7 +45,11 @@ const UserNav = () => {
           <div className="w-[220px] absolute top-[60px] right-0 border bg-white rounded-xl shadow-md flex flex-col cursor-pointer">
            <MenuLink
             label='Log in'
-            onClick={()=> console.log("Clicked btn")}
+            
+            onClick={()=> {
+              console.log("Clicked")
+              loginModal.open()
+            }}
             />
             <hr className="bg-gray-300 opacity-20"/>
            <MenuLink

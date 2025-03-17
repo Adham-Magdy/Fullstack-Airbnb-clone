@@ -1,15 +1,19 @@
-import React from 'react'
+"use client";
+import React from "react";
 
-interface MenuLinkProps{
-    onClick:()=> void;
-    label:string;
+interface MenuLinkProps {
+  label: string;
+  onClick: () => void;
 }
-const MenuLink: React.FC<MenuLinkProps> = ({label}) => {
+const MenuLink: React.FC<MenuLinkProps> = ({ label, onClick }) => {
   return (
-    <div className='py-4 px-6 cursor-pointer hover:bg-gray-100 transition'>
+    <div
+      onClick={onClick}
+      className="py-4 px-6 cursor-pointer hover:bg-gray-100 transition"
+    >
       {label}
     </div>
-  )
-}
+  );
+};
 
-export default MenuLink
+export default MenuLink;
