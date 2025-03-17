@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import Modals from "./components/modals/Modals";
 import LoginModal from "./components/modals/LoginModal";
+import SignupModal from "./components/modals/SignupModal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,6 +44,7 @@ export default function RootLayout({
        </div>
        {/* <Modals label="Modal Test" content={content()} isOpen={false}/> */}
       <LoginModal/>
+      <SignupModal/>
       </body>
     </html>
   );
